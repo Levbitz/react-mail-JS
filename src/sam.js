@@ -1,34 +1,26 @@
 import emailjs from "emailjs-com";
+import firebase from "firebase/app";
 
-function App() {
+function Sam() {
+  console.log(firebase);
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_7sd0wrs",
-        "template_ytov1h9",
-
+        "service_5fln1l9",
+        "template_jy56qfn",
         e.target,
-        "user_FKeFsx5fVPcdU8BsbTdwU"
+        "user_4LdHkEcN1bqeDGvVpFSu0"
       )
-
-      //       {{{name}}}
-
-      // {{{number}}}
-
-      // {{{email}}}
-
-      // {{{message}}}
       .then(
         (result) => {
-          alert("you message has been recieved thank for your feed back");
+          console.log(result.text);
         },
         (error) => {
           console.log(error.text);
         }
       );
-    e.target.reset();
   }
   return (
     <div>
@@ -57,4 +49,4 @@ function App() {
   );
 }
 
-export default App;
+export default Sam;
